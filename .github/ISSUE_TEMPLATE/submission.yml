@@ -1,14 +1,20 @@
-name: Bug Report
-description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
-assignees:
-  - octocat
+name: Hack Web3Conf Submission
+description: Make your submission to Hack Web3Conf
+title: "Submission: <team name>"
+labels: ["submission"]
 body:
-  - type: markdown
+  - type: input
+    id: team-name
     attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
+      label: Team Name
+    validations:
+      required: true
+  - type: input
+    id: project-name
+    attributes:
+      label: Project Name
+    validations:
+      required: true
   - type: input
     id: contact
     attributes:
@@ -16,47 +22,85 @@ body:
       description: How can we get in touch with you if we need more info?
       placeholder: ex. email@example.com
     validations:
-      required: false
-  - type: textarea
-    id: what-happened
-    attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
-    validations:
       required: true
   - type: dropdown
-    id: version
+    id: project-track
     attributes:
-      label: Version
-      description: What version of our software are you running?
+      label: Project Track
+      description: For which track are you submitting your project?
       options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
+          - All Things Devs
+          - NFT, Art & Gaming
+          - Blockchain & Cryptocurrencies
+          - DeFi
+          - Community
+          - Other
     validations:
       required: true
   - type: dropdown
-    id: browsers
+    id: bounty
     attributes:
-      label: What browsers are you seeing the problem on?
+      label: Sponsor Bounties
+      description: Which sponsor bounties are you applying for?
       multiple: true
       options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+        - None
+        - IPFS Filecoin
+    validations:
+      required: true
+  - type: input
+    id: project-repo
+    attributes:
+      label: Link to project GitHub public repo
+    validations:
+      required: true
+  - type: input
+    id: website-link
+    attributes:
+      label: Link to project website
+    validations:
+      required: true
+  - type: input
+    id: demo-link
+    attributes:
+      label: Link to demo video
+    validations:
+      required: true
   - type: textarea
-    id: logs
+    id: contract-addresses
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
-  - type: checkboxes
-    id: terms
+      label: Contract address
+      description: List all the deployed contract addresses
+    validations:
+      required: false
+  - type: textarea
+    id: inspiration
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+      label: Inspiration
+      description: What was your inspiration behind making this project?
+    validations:
+      required: false
+  - type: textarea
+    id: what-it-does
+    attributes:
+      label: What it does
+      description: Explain in short what your project does
+    validations:
+      required: false
+  - type: textarea
+    id: challenges-you-ran-into
+    attributes:
+      label: Challenges you ran into
+      description: What challenges did you face during this hack?
+    validations:
+      required: false
+  - type: textarea
+    id: anything-else
+    attributes:
+      label: Anything else?
+      description: |
+        Anything else you that you want to share with us?
+        
+        Tip: You can attach images or files by clicking this area to highlight it and then dragging files in.
+    validations:
+      required: false
