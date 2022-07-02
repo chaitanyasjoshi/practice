@@ -34,9 +34,8 @@ body:
           - Blockchain & Cryptocurrencies
           - DeFi
           - Community
-          - Other
     validations:
-      required: true
+      required: false
   - type: dropdown
     id: bounty
     attributes:
@@ -44,10 +43,9 @@ body:
       description: Which sponsor bounties are you applying for?
       multiple: true
       options:
-        - None
         - IPFS Filecoin
     validations:
-      required: true
+      required: false
   - type: input
     id: project-repo
     attributes:
